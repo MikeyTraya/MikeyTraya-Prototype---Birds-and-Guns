@@ -6,6 +6,12 @@ namespace FlappyGun
 {
     public class ObstacleMovement : MonoBehaviour
     {
+        private GameObject parentObject;
+
+        private void Start()
+        {
+            parentObject = GameObject.FindWithTag("Obstacle");
+        }
         private void Update()
         {
             transform.Translate(Vector2.left * Time.deltaTime);
@@ -15,7 +21,7 @@ namespace FlappyGun
         {
             if (collision.gameObject.CompareTag("Destroyer"))
             {
-                Destroy(gameObject);
+                Destroy(parentObject);
             }
 
             if (collision.gameObject.CompareTag("Player"))
