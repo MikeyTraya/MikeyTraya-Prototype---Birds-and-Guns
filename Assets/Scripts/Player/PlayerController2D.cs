@@ -14,6 +14,8 @@ namespace FlappyGun
         private void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
+            //rb2d = GetComponentInChildren<Rigidbody2D>();
+
         }
 
         private void FixedUpdate()

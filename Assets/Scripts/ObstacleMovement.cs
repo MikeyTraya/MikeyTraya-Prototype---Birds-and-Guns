@@ -8,10 +8,6 @@ namespace FlappyGun
     {
         private GameObject parentObject;
 
-        private void Start()
-        {
-            parentObject = GameObject.FindWithTag("Obstacle");
-        }
         private void Update()
         {
             transform.Translate(Vector2.left * Time.deltaTime);
@@ -21,7 +17,9 @@ namespace FlappyGun
         {
             if (collision.gameObject.CompareTag("Destroyer"))
             {
+                parentObject = GameObject.FindWithTag("Obstacle");
                 Destroy(parentObject);
+
             }
 
             if (collision.gameObject.CompareTag("Player"))
